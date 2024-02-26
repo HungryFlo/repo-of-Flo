@@ -1,0 +1,78 @@
+k {capacity = 512, length = 1,cursor = 0}
+M {capacity = 512, length = 1,cursor = 0}
+M {capacity = 512, length = 1,cursor = 0}
+M {capacity = 512, length = 1,cursor = 0}
+M {capacity = 512, length = 1,cursor = 0}
+M {capacity = 512, length = 1,cursor = 0}
+Empty list {capacity = 512, length = 0, Cursor = 0}
+p {capacity = 512, length = 1,cursor = 0}
+p d {capacity = 512, length = 2,cursor = 1}
+p d {capacity = 512, length = 2,cursor = 1}
+p d h {capacity = 512, length = 3,cursor = 2}
+p d O {capacity = 512, length = 3,cursor = 2}
+p d O s {capacity = 512, length = 4,cursor = 3}
+p d O U {capacity = 512, length = 4,cursor = 3}
+p d O {capacity = 512, length = 3,cursor = 0}
+p o d O {capacity = 512, length = 4,cursor = 1}
+p o d O {capacity = 512, length = 4,cursor = 0}
+L o d O {capacity = 512, length = 4,cursor = 0}
+L o d O {capacity = 512, length = 4,cursor = 0}
+L o d O {capacity = 512, length = 4,cursor = 0}
+K o d O {capacity = 512, length = 4,cursor = 0}
+o d O {capacity = 512, length = 3,cursor = 0}
+o d O {capacity = 512, length = 3,cursor = 1}
+o d O {capacity = 512, length = 3,cursor = 2}
+o d O y {capacity = 512, length = 4,cursor = 3}
+o d O {capacity = 512, length = 3,cursor = 0}
+o z d O {capacity = 512, length = 4,cursor = 1}
+o z d O {capacity = 512, length = 4,cursor = 2}
+o z O {capacity = 512, length = 3,cursor = 2}
+o z O d {capacity = 512, length = 4,cursor = 3}
+o z O d c {capacity = 512, length = 5,cursor = 4}
+o z O d c {capacity = 512, length = 5,cursor = 3}
+o z O d w c {capacity = 512, length = 6,cursor = 4}
+o z O d w c {capacity = 512, length = 6,cursor = 5}
+o z O d w c {capacity = 512, length = 6,cursor = 4}
+o z O d w c {capacity = 512, length = 6,cursor = 3}
+o z O d a w c {capacity = 512, length = 7,cursor = 4}
+o z O d a w c {capacity = 512, length = 7,cursor = 0}
+o z O d a w c {capacity = 512, length = 7,cursor = 1}
+o z v O d a w c {capacity = 512, length = 8,cursor = 2}
+o z v O d a w c {capacity = 512, length = 8,cursor = 7}
+o z v O d a w c {capacity = 512, length = 8,cursor = 7}
+o z v O d a w c i {capacity = 512, length = 9,cursor = 8}
+o z v O d a w c i b {capacity = 512, length = 10,cursor = 9}
+o z v O d a w c i b y {capacity = 512, length = 11,cursor = 10}
+o z v O d a w c i b {capacity = 512, length = 10,cursor = 0}
+o z v O d a w c i b {capacity = 512, length = 10,cursor = 0}
+o z z v O d a w c i b {capacity = 512, length = 11,cursor = 1}
+o z v O d a w c i b {capacity = 512, length = 10,cursor = 1}
+o z t v O d a w c i b {capacity = 512, length = 11,cursor = 2}
+o z t v O d a w c i b {capacity = 512, length = 11,cursor = 1}
+o P t v O d a w c i b {capacity = 512, length = 11,cursor = 1}
+o L t v O d a w c i b {capacity = 512, length = 11,cursor = 1}
+o A t v O d a w c i b {capacity = 512, length = 11,cursor = 1}
+o A t v O d a w c i b {capacity = 512, length = 11,cursor = 2}
+o A t v O d a w c i b {capacity = 512, length = 11,cursor = 1}
+o W t v O d a w c i b {capacity = 512, length = 11,cursor = 1}
+o U t v O d a w c i b {capacity = 512, length = 11,cursor = 1}
+o U t v O d a w c i b {capacity = 512, length = 11,cursor = 0}
+o U t v O d a w c i b {capacity = 512, length = 11,cursor = 0}
+o U t v O d a w c i b {capacity = 512, length = 11,cursor = 0}
+o U t v O d a w c i b {capacity = 512, length = 11,cursor = 0}
+V U t v O d a w c i b {capacity = 512, length = 11,cursor = 0}
+V U t v O d a w c i b {capacity = 512, length = 11,cursor = 0}
+V U t v O d a w c i b {capacity = 512, length = 11,cursor = 0}
+V U t v O d a w c i b {capacity = 512, length = 11,cursor = 0}
+V l U t v O d a w c i b {capacity = 512, length = 12,cursor = 1}
+V l U t v O d a w c i b {capacity = 512, length = 12,cursor = 2}
+V l U t v O d a w c i b {capacity = 512, length = 12,cursor = 11}
+V l U t v O d a w c i b {capacity = 512, length = 12,cursor = 10}
+V l U t v O d a w c i b {capacity = 512, length = 12,cursor = 11}
+V l U t v O d a w c i b s {capacity = 512, length = 13,cursor = 12}
+V l U t v O d a w c i b s {capacity = 512, length = 13,cursor = 12}
+V l U t v O d a w c i b L {capacity = 512, length = 13,cursor = 12}
+V l U t v O d a w c i b L {capacity = 512, length = 13,cursor = 0}
+V l U t v O d a w c i b L {capacity = 512, length = 13,cursor = 1}
+V J U t v O d a w c i b L {capacity = 512, length = 13,cursor = 1}
+V J U t v O d a w c i b L {capacity = 512, length = 13,cursor = 1}

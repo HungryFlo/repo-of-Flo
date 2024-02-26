@@ -1,0 +1,108 @@
+@startuml
+class sudoku.GameBoardPanel {
+- {static} long serialVersionUID
++ {static} int CELL_SIZE
++ {static} int BOARD_WIDTH
++ {static} int BOARD_HEIGHT
+- Cell[][] cells
+- Puzzle puzzle
+- CellInputListener listener
+- int cellsToGuess
++ void newGame(int,boolean)
++ boolean isSolved()
++ int getCellsToGuess()
+}
+class sudoku.CellInputListener {
+- GameBoardPanel gameboard
+- int cellsRemain
+- int cellsFilled
++ void setCellsRemain(int)
++ void actionPerformed(ActionEvent)
+}
+class sudoku.WatchControlPanel {
+- boolean flag
+}
+enum sudoku.CellStatus {
++  GIVEN
++  TO_GUESS
++  CORRECT_GUESS
++  WRONG_GUESS
+}
+class sudoku.Puzzle {
+~ int[][] numbers
+~ boolean[][] isGiven
+- boolean check(int[][],int,int,int)
++ void newPuzzle(int)
+}
+class sudoku.StopWatch {
+- JLabel currTimeLabel
+- int cntSec
+- DecimalFormat textFormat
+- Timer timer
++ void start()
++ void stop()
++ String getCurrTime()
++ void reset()
++ void paint()
+}
+class sudoku.StopWatch$TimeActionListener {
++ void actionPerformed(ActionEvent)
+}
+class sudoku.HelpDialog {
+}
+class sudoku.WelcomeMain {
++ {static} void main(String[])
+}
+class sudoku.SudokuConstants {
++ {static} int GRID_SIZE
+}
+class sudoku.Cell {
+- {static} long serialVersionUID
++ {static} Color BG_GIVEN
++ {static} Color FG_GIVEN
++ {static} Color FG_NOT_GIVEN
++ {static} Color BG_TO_GUESS
++ {static} Color BG_CORRECT_GUESS
++ {static} Color BG_WRONG_GUESS
++ {static} Font FONT_NUMBERS
+~ int row
+~ int number
+~ CellStatus status
+- void setCellBoarder()
++ void newGame(int,boolean)
++ void paint()
+}
+class sudoku.SudokuMain {
+- {static} long serialVersionUID
+~ GameBoardPanel board
+~ StopWatch watch
+~ JProgressBar progress
++ String getSuccessTime()
++ void pauseTime()
++ void continueTime()
++ void setProgress(int,int)
+}
+
+
+sudoku.JPanel <|-- sudoku.GameBoardPanel
+java.awt.event.ActionListener <|.. sudoku.CellInputListener
+sudoku.JPanel <|-- sudoku.WatchControlPanel
+sudoku.JPanel <|-- sudoku.StopWatch
+sudoku.StopWatch +.. sudoku.StopWatch$TimeActionListener
+ActionListener <|.. sudoku.StopWatch$TimeActionListener
+sudoku.JDialog <|-- sudoku.HelpDialog
+sudoku.JFrame <|-- sudoku.WelcomeMain
+javax.swing.JTextField <|-- sudoku.Cell
+sudoku.JFrame <|-- sudoku.SudokuMain
+
+sudoku.WelcomeMain ..> sudoku.SudokuMain
+sudoku.CellInputListener <--> sudoku.GameBoardPanel
+sudoku.Cell ..> sudoku.CellInputListener
+sudoku.SudokuMain *.. sudoku.GameBoardPanel
+sudoku.SudokuMain *.. sudoku.StopWatch
+sudoku.SudokuMain ..> sudoku.HelpDialog
+sudoku.SudokuMain ..> sudoku.WatchControlPanel
+sudoku.GameBoardPanel *.. sudoku.Puzzle
+sudoku.GameBoardPanel *.. sudoku.Cell
+
+@enduml

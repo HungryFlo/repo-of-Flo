@@ -1,0 +1,4 @@
+-----------------------------
+There are(is) 1 nodes in this BST.
+The height of this BST is 1.
+-----------------------------
