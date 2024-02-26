@@ -1,2 +1,2 @@
 # repo-of-Flo
-Flo's first repo.
+Just some coding practice.
