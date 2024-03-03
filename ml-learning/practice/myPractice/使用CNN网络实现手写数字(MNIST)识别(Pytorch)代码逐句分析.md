@@ -1,10 +1,8 @@
-import torch.cuda
-from torch import nn
-import matplotlib.pyplot as plt
-from torchvision import datasets, transforms, utils
-import torch.nn.functional as F
-import torch.optim as optim
+# 使用CNN网络实现手写数字(MNIST)识别(Pytorch)代码逐句分析
 
+## 图像导入与预处理
+
+```python
 # 图像预处理，使用Compose把多个步骤整合到一起
 # ToTensor()  可以把灰度范围从0-255变换到0-1之间
 # Normalize((0.5,0.5,0.5),(0.5,0.5,0.5)) 把0-1变换为(-1,1)
@@ -26,8 +24,11 @@ train_loader = torch.utils.data.DataLoader(train_data, batch_size = 64,
                                            shuffle = True, num_workers = 0)
 test_loader = torch.utils.data.DataLoader(test_data, batch_size = 64,
                                           shuffle = True, num_workers = 0, drop_last=True)
+```
 
+## 展示一个batch的数据
 
+```python
 # 显示一个batch的训练集数据
 images, labels = next(iter(train_loader))
 # torchvision.utils.make_grid() 用于可视化一组图像，常用于显示图像样本
@@ -52,7 +53,11 @@ for i in range(64):
 #
 plt.imshow(img)
 plt.show()
+```
 
+## CNN网络
+
+```python
 # CNN 网络
 # 继承nn.Module类
 class CNN(nn.Module):
@@ -78,15 +83,21 @@ class CNN(nn.Module):
 
 
 net = CNN()
+```
 
+## 损失函数与优化函数
+
+```python
 # 损失函数和优化函数
 # 损失函数为交叉熵损失
 criterion = nn.CrossEntropyLoss()
 # 优化函数为随机梯度下降
 optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
+```
 
-# optimizer = torch.optim.Adam(net.parameters(), lr = 1e-2)
+## 模型训练与保存
 
+```python
 # 模型训练
 # 先定义三个数组来存放结果
 train_accs = []
@@ -138,8 +149,11 @@ print('Finished Training')
 # 模型的保存
 PATH = './mnist_net.pth'
 torch.save(net.state_dict(), PATH)
+```
 
-# 画出训练过程
+## 画出训练过程
+
+```python
 def draw_train_process(title, iters, costs, accs, label_cost, lable_acc):
     plt.title(title, fontsize=24)
     plt.xlabel("iter", fontsize=20)
@@ -152,8 +166,11 @@ def draw_train_process(title, iters, costs, accs, label_cost, lable_acc):
 
 train_iters = range(len(train_accs))
 draw_train_process('training', train_iters, train_loss, train_accs,'trainning loss', 'training acc')
+```
 
+## 展示一个batch的标签与预测结果
 
+```python
 dataiter = iter(test_loader)
 images, labels = next(dataiter)
 
@@ -185,7 +202,11 @@ _, predicted = torch.max(test_out, dim=1)
 # 输出这个batch的预测结果
 print('Predicted: ', ' '.join('%d' % predicted[j]
                               for j in range(64)))
+```
 
+## 输出测试集上的整体正确率与每个类的正确率
+
+```python
 # 输出测试集上的整体正确率
 correct = 0
 total = 0
@@ -229,3 +250,8 @@ with torch.no_grad():
 for i in range(10):
     print('Accuracy of %d : %2d %%' %
           (i, 100 * class_correct[i] / class_total[i]))
+```
+
+## 学习材料
+
+[使用Pytorch框架的CNN网络实现手写数字（MNIST）识别 | BraveY](https://bravey.github.io/2020-03-13-使用Pytorch框架的CNN网络实现手写数字（MNIST）识别)
