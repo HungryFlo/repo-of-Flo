@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>showpanel</class>
+ <widget class="QWidget" name="showpanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>楷体</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>膳食评价</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.svg</normaloff>icon.svg</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(79, 175, 255, 113), stop:1 rgba(255, 255, 255, 255))</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>761</width>
+     <height>561</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="up_half" stretch="0,0">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgba(170, 255, 255, 100)</string>
+        </property>
+        <property name="text">
+         <string>膳食丰富度及能量摄入情况</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(170, 255, 255, 100)</string>
+            </property>
+            <property name="text">
+             <string>膳食种类丰富度</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="type_lcdnum">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(170, 255, 255, 100)</string>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+            <property name="value" stdset="0">
+             <double>0.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(170, 255, 255, 100)</string>
+            </property>
+            <property name="text">
+             <string>食物多样性</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="variety_lcdnum">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(170, 255, 255, 100)</string>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(170, 255, 255, 100)</string>
+            </property>
+            <property name="text">
+             <string>能量总摄入(kJ)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="energy_intake_lcdnum">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(170, 255, 255, 100)</string>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(170, 255, 255, 100)</string>
+            </property>
+            <property name="text">
+             <string>早餐能量比%</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="breakfast_energy_lcdnum">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(170, 255, 255, 100)</string>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(170, 255, 255, 100)</string>
+            </property>
+            <property name="text">
+             <string>午餐能量比%</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="lunch_energy_lcd_num">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(170, 255, 255, 100)</string>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(170, 255, 255, 100)</string>
+            </property>
+            <property name="text">
+             <string>晚餐能量比%</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="dinner_energy_lcdnum">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(170, 255, 255, 100)</string>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="down_half">
+      <item>
+       <widget class="QLabel" name="label_11">
+        <property name="styleSheet">
+         <string notr="true">background-color:rgba(255, 170, 255, 70)</string>
+        </property>
+        <property name="text">
+         <string>营养素摄入量评估</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_18">
+          <item>
+           <widget class="QLabel" name="label_12">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(255, 170, 255, 70)</string>
+            </property>
+            <property name="text">
+             <string>宏量营养素
+供能占比%</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item>
+               <widget class="QLabel" name="label_18">
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgba(255, 170, 255, 70)</string>
+                </property>
+                <property name="text">
+                 <string>碳水</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLCDNumber" name="carbon_lcdnum">
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgba(255, 170, 255, 70)</string>
+                </property>
+                <property name="segmentStyle">
+                 <enum>QLCDNumber::Flat</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QLabel" name="label_6">
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgba(255, 170, 255, 70)</string>
+                </property>
+                <property name="text">
+                 <string>脂肪</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLCDNumber" name="fat_lcdnum">
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgba(255, 170, 255, 70)</string>
+                </property>
+                <property name="segmentStyle">
+                 <enum>QLCDNumber::Flat</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QLabel" name="label_16">
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgba(255, 170, 255, 70)</string>
+                </property>
+                <property name="text">
+                 <string>蛋白质</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLCDNumber" name="protein_lcdnum">
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgba(255, 170, 255, 70)</string>
+                </property>
+                <property name="segmentStyle">
+                 <enum>QLCDNumber::Flat</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_19">
+          <item>
+           <widget class="QLabel" name="label_13">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(255, 170, 255, 70)</string>
+            </property>
+            <property name="text">
+             <string>非产能营养素
+摄入量偏离度</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="non_lcdnum">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(255, 170, 255, 70)</string>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(208, 208, 208)</string>
+      </property>
+      <property name="text">
+       <string>均衡膳食，从我做起！（返回）</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
