@@ -108,37 +108,37 @@ class ShowPanelWindow(QtWidgets.QWidget, showpanel):
         self.switch_window_first_page.emit()
 
     def updateData(self):
-        if self.config.recipe_path is None:
-            recipe_dict = {**self.config.breakfast_recipe, **self.config.lunch_recipe, **self.config.dinner_recipe}
-        else:
-            try:
+        try:
+            if self.config.recipe_path is None:
+                recipe_dict = {**self.config.breakfast_recipe, **self.config.lunch_recipe, **self.config.dinner_recipe}
+            else:
                 df = pd.read_excel(self.config.recipe_path)
                 recipe_dict = df.set_index('食物名称')[['餐次', '食用份数']].apply(tuple, axis=1).to_dict()
-                evaluator = Evaluator(gender=self.config.gender)
-                self.type_lcdnum.display(evaluator.type(recipe_dict))
-                self.variety_lcdnum.display(evaluator.variety(recipe_dict))
-                self.energy_intake_lcdnum.display(evaluator.energy(recipe_dict))
-                a, b, c = evaluator.energy_proportion_list(recipe_dict)
-                self.breakfast_energy_lcdnum.display(a)
-                self.lunch_energy_lcd_num.display(b)
-                self.dinner_energy_lcdnum.display(c)
-                a, b, c = evaluator.m_energy_ratio_list(recipe_dict)
-                self.carbon_lcdnum.display(a)
-                self.fat_lcdnum.display(b)
-                self.protein_lcdnum.display(c)
-                self.non_lcdnum.display(evaluator.non_energy_nutrients(recipe_dict))
-                self.update()
-            except Exception as e:
-                # 创建一个QMessageBox实例
-                error_box = QtWidgets.QMessageBox()
-                error_box.setIcon(QtWidgets.QMessageBox.Critical)
-                error_box.setWindowTitle("读取数据错误")
-                error_box.setText("读取Excel文件时发生错误，请检查文件是否符合要求。")
-                icon = QtGui.QIcon()
-                icon.addPixmap(QtGui.QPixmap("icon.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-                error_box.setWindowIcon(icon)
-                # 显示消息框
-                error_box.exec_()
+            evaluator = Evaluator(gender=self.config.gender)
+            self.type_lcdnum.display(evaluator.type(recipe_dict))
+            self.variety_lcdnum.display(evaluator.variety(recipe_dict))
+            self.energy_intake_lcdnum.display(evaluator.energy(recipe_dict))
+            a, b, c = evaluator.energy_proportion_list(recipe_dict)
+            self.breakfast_energy_lcdnum.display(a)
+            self.lunch_energy_lcd_num.display(b)
+            self.dinner_energy_lcdnum.display(c)
+            a, b, c = evaluator.m_energy_ratio_list(recipe_dict)
+            self.carbon_lcdnum.display(a)
+            self.fat_lcdnum.display(b)
+            self.protein_lcdnum.display(c)
+            self.non_lcdnum.display(evaluator.non_energy_nutrients(recipe_dict))
+            self.update()
+        except Exception as e:
+            # 创建一个QMessageBox实例
+            error_box = QtWidgets.QMessageBox()
+            error_box.setIcon(QtWidgets.QMessageBox.Critical)
+            error_box.setWindowTitle("读取数据错误")
+            error_box.setText("读取Excel文件时发生错误，请检查文件是否符合要求。")
+            icon = QtGui.QIcon()
+            icon.addPixmap(QtGui.QPixmap("icon.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            error_box.setWindowIcon(icon)
+            # 显示消息框
+            error_box.exec_()
 
 class ChooseBreakfastWindow(QtWidgets.QWidget, choose_breakfast):
     switch_window_new_recipe = QtCore.pyqtSignal()

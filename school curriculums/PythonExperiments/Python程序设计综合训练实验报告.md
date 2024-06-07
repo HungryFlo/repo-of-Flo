@@ -4,6 +4,8 @@
 
 
 
+本项目的源代码：https://github.com/HungryFlo/Recipe-Evaluator.git
+
 ## 实验内容
 
 设计并完成一个完整的膳食助手应用程序，实现以下功能：
